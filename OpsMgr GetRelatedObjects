@@ -1,0 +1,5 @@
+$Groups = Get-SCOMGroup
+$Group = Get-SCOMGroup -DisplayName “SQL Computers”
+$Class = Get-SCOMClass
+$Objs = $Group.GetRelatedMonitoringObjects()
+$Class | where{$_.Id.GUID -eq $Obj.LeastDerivedNonAbstractManagementPackClassId.GUID}).DisplayName
